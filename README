@@ -1,5 +1,5 @@
 Pre-requisite:
-  Python packages:
+  Python3.6+ and packages:
     pandas
     numpy
     tqdm
