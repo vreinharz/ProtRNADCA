@@ -1,0 +1,32 @@
+Pre-requisite:
+  Python packages:
+    pandas
+    numpy
+    tqdm
+
+
+There is one executable in Src/: dca_protrna.py
+
+usage: dca_protrna.py [-h] --input INPUT [--output OUTPUT] [--nprocs NPROCS]
+                      [--gaps GAPS] [--conservation CONSERVATION]
+
+    Mandatory option:
+        --input -i  An fasta-ish input file. Every sequence must have a title starting with ">"
+                    The following line has a protein sequence followed by an RNA sequence, white spaces in between (space or tabs)
+                    Gaps MUST BE dots '.'
+                    All proteins (and all rnas) must have the same length
+    Optional options:
+        --output -o       output file where the results are saved. The format is "i j DCA APC"
+                          Where for position "i" in the protein with position "j" of the RNA
+                          the DCA and APC values are returned
+
+        --gaps -g         (default: 0.5) Maximal percentage of gap [0, 1] in a column to be considered
+
+        --conservation -c (default 0.99) Maximal conservation [0, 1] in a column to be considered
+
+        --nbprocs -n      (default 1) Number of processors to be used for the computation
+
+
+
+The file Data/alignment.txt is the alignment used in "Unspecific binding but specific disruption of the group I intron by the StpA chaperone"
+by Vladimir Reinharz & Tsvi Tlusty
